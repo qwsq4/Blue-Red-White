@@ -1,5 +1,11 @@
+import model.InterfaceComponents;
+
 public class Main {
+
+    static InterfaceComponents components;
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        components = new InterfaceComponents();
+        components.initializate();
     }
 }
