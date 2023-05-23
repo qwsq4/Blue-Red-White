@@ -1,6 +1,5 @@
 package model;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,10 +21,14 @@ public class ClearFieldPressAction implements ActionListener {
         components.setGameIsEnd(false);
         buttonPressAction.setCount(0);
 
-        JButton[] buttons = components.getButtonsArray();
-        for (JButton button : buttons) {
-            button.setBackground(Color.white);
+        BlueRedWhiteButton[][] buttons = components.getButtonsArray();
+        for (BlueRedWhiteButton[] button : buttons) {
+            for (BlueRedWhiteButton blueRedWhiteButton : button) {
+                blueRedWhiteButton.setBackground(Color.white);
+                blueRedWhiteButton.setCheckInt(0);
+            }
         }
+
         components.getTextArea().append("Поле очищено! \n");
         System.out.println("Поле очищено!");
     }
